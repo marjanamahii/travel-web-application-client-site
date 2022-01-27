@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import Navbar from '../../Shared/Navbar/Navbar';
 import HeroSection from '../HeroSection/HeroSection';
 import Reviews from '../Reviews/Reviews';
@@ -9,6 +10,7 @@ const Home = () => {
             <Navbar></Navbar>
             <HeroSection></HeroSection>
             <Reviews></Reviews>
+            <Footer></Footer>
         </div>
     );
 };

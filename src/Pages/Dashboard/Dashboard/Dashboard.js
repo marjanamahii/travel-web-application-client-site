@@ -51,20 +51,20 @@ const Dashboard = (props) => {
                         <li>
                             <NavLink to="add-blog">Add Blog</NavLink>
                         </li>
-                        {
-                            admin.isAdmin &&
-                            <>
-                                <li>
-                                    <NavLink to="pending-blog">Pending Blog</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="all-blog">All Blog</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="add-new-admin">Add Admin</NavLink>
-                                </li>
-                            </>
-                        }
+                        {/* {
+                            admin.isAdmin && */}
+                        <>
+                            <li>
+                                <NavLink to="pending-blog">Pending Blog</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="all-blog">All Blog</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="add-new-admin">Add Admin</NavLink>
+                            </li>
+                        </>
+                        {/* } */}
                         <li onClick={handleLogout}>Log Out</li>
                     </ul>
                 </nav>
@@ -96,7 +96,7 @@ const Dashboard = (props) => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Travelerz DashBoard
+                        Travelers DashBoard
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -145,10 +145,7 @@ const Dashboard = (props) => {
 }
 
 Dashboard.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
+
     window: PropTypes.func,
 };
 

@@ -144,7 +144,7 @@ const useFirebase = () => {
             name,
             email,
         }
-        axios.post('https://evening-crag-06086.herokuapp.com/add-user', newUser);
+        axios.post('http://localhost:5000/add-user', newUser);
     }
 
 
@@ -165,7 +165,7 @@ const useFirebase = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        axios.get(`https://evening-crag-06086.herokuapp.com/check-admin?userEmail=${user?.email}`)
+        axios.get(`http://localhost:5000/check-admin?userEmail=${user?.email}`)
             .then((response) => {
                 setAdmin(response.data);
                 setIsLoading(false);
@@ -177,6 +177,14 @@ const useFirebase = () => {
                 setIsLoading(false);
             })
     }, [user.email])
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+            .catch(err => {
+                console.log(err);
+            })
+    }, [user?.email])
 
     return {
         registration,

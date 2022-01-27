@@ -19,7 +19,7 @@ const ManageAllBlog = () => {
     const deteleRef = useRef(null);
 
     useEffect(() => {
-        axios.get(`https://evening-crag-06086.herokuapp.com/all-blog?status=confirm`)
+        axios.get(`http://localhost:5000/all-blog?status=confirm`)
             .then((response) => {
                 setAllBlog(response.data);
             })
@@ -32,7 +32,7 @@ const ManageAllBlog = () => {
     }
 
     const handleDelete = id => {
-        axios.delete(`https://evening-crag-06086.herokuapp.com/delete-single-blog?blogId=${id}`)
+        axios.delete(`http://localhost:5000/delete-single-blog?blogId=${id}`)
             .then((response) => {
                 if (response.data.deletedCount) {
                     swal({

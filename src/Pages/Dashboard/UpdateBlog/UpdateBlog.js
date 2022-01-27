@@ -19,7 +19,7 @@ const UpdateBlog = () => {
     }
 
     useEffect(() => {
-        axios.get(`https://evening-crag-06086.herokuapp.com/single-blog?blogId=${blogId}`)
+        axios.get(`http://localhost:5000/single-blog?blogId=${blogId}`)
             .then((response) => {
                 setUpdateBlogData(response.data);
             })
@@ -27,7 +27,7 @@ const UpdateBlog = () => {
 
     const handleUpdateForm = e => {
         e.preventDefault();
-        axios.patch(`https://evening-crag-06086.herokuapp.com/update-blog?blogId=${blogId}`, updateBlogData)
+        axios.patch(`http://localhost:5000/update-blog?blogId=${blogId}`, updateBlogData)
             .then((response) => {
                 if (response.data.modifiedCount) {
                     swal({

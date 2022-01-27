@@ -45,7 +45,7 @@ const AddBlog = () => {
 
 
 
-        axios.post('https://evening-crag-06086.herokuapp.com/add-blog', addDate)
+        axios.post('http://localhost:5000/add-blog', addDate)
             .then((response) => {
                 if (response.data.insertedId.length >= 1) {
                     swal({

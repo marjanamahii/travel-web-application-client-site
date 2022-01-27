@@ -19,14 +19,14 @@ const PendingAllBlog = () => {
     const approveRef = useRef(null);
 
     useEffect(() => {
-        axios.get(`https://evening-crag-06086.herokuapp.com/all-blog?status=pending`)
+        axios.get(`http://localhost:5000/all-blog?status=pending`)
             .then((response) => {
                 setAllBlog(response.data);
             })
     }, [])
 
     const handleApprove = (id) => {
-        axios.patch(`https://evening-crag-06086.herokuapp.com/update-blog-status?blogId=${id}`, { newOrderStatus: 'confirm' })
+        axios.patch(`http://localhost:5000/update-blog-status?blogId=${id}`, { newOrderStatus: 'confirm' })
             .then((response) => {
                 if (response.data.modifiedCount) {
                     swal({
@@ -49,7 +49,7 @@ const PendingAllBlog = () => {
     }
 
     const handleDelete = id => {
-        axios.delete(`https://evening-crag-06086.herokuapp.com/delete-single-blog?blogId=${id}`)
+        axios.delete(`http://localhost:5000/delete-single-blog?blogId=${id}`)
             .then((response) => {
                 if (response.data.deletedCount) {
                     swal({
